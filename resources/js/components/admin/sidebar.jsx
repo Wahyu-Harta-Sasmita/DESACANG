@@ -1,21 +1,62 @@
-import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
+    const location = useLocation();
+
+    // Logika custom untuk memeriksa rute aktif
+    const isValidasiActive = location.pathname === '/admin' || location.pathname === '/validasi';
+
     return (
         <div className="w-64 bg-gray-800 text-white h-screen">
-            <div className="p-4 text-center text-xl font-bold border-b border-gray-700">Admin Dashboard</div>
+            <div className="p-4 text-center text-xl font-bold border-b border-gray-700">Dashboard</div>
             <ul className="mt-6 space-y-2">
                 <li>
-                    <a href="/validasi" className="block py-2 px-4 hover:bg-gray-700 bg-gray-700">Validasi Data</a>
+                    <NavLink
+                        to="/validasi"
+                        className={({ isActive }) =>
+                            isActive || isValidasiActive
+                                ? 'block py-2 px-4 bg-gray-700 text-white'
+                                : 'block py-2 px-4 hover:bg-gray-700'
+                        }
+                    >
+                        Validasi Data
+                    </NavLink>
                 </li>
                 <li>
-                    <a href="/pendaftaran" className="block py-2 px-4 hover:bg-gray-700">Pendaftaran Manual</a>
+                    <NavLink
+                        to="/pendaftaran"
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'block py-2 px-4 bg-gray-700 text-white'
+                                : 'block py-2 px-4 hover:bg-gray-700'
+                        }
+                    >
+                        Pendaftaran Manual
+                    </NavLink>
                 </li>
                 <li>
-                    <a href="/manajemen" className="block py-2 px-4 hover:bg-gray-700">Manajemen Data</a>
+                    <NavLink
+                        to="/manajemen"
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'block py-2 px-4 bg-gray-700 text-white'
+                                : 'block py-2 px-4 hover:bg-gray-700'
+                        }
+                    >
+                        Manajemen Data
+                    </NavLink>
                 </li>
                 <li>
-                    <a href="/laporan" className="block py-2 px-4 hover:bg-gray-700">Laporan Data</a>
+                    <NavLink
+                        to="/laporan"
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'block py-2 px-4 bg-gray-700 text-white'
+                                : 'block py-2 px-4 hover:bg-gray-700'
+                        }
+                    >
+                        Laporan Data
+                    </NavLink>
                 </li>
             </ul>
         </div>
