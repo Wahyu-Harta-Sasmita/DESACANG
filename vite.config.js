@@ -12,7 +12,7 @@ export default defineConfig({
     ],
     resolv: {
         alias: {
-            "@": "/resources/js",
+            "@": "/resources/js/components/admin",
         },
     },
 });

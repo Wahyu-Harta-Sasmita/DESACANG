@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Sidebar from './admin/sidebar';
+import Sidebar from './sidebar';
 
 const ValidasiData = () => {
     const [data, setData] = useState([]);
