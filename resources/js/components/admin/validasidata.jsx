@@ -48,20 +48,20 @@ const ValidasiData = () => {
 
     return (
         <div className="flex-1 p-4">
-            <h1 className="text-2xl font-bold text-center text-blue-800">Validasi Data</h1>
+            <h1 className="text-2xl font-bold text-center text-green-800">Validasi Data</h1>
 
             {loading ? (
                 <div className="text-center mt-6">
-                    <p className="text-gray-600">Memuat data...</p>
+                    <p className="text-green-600">Memuat data...</p>
                 </div>
             ) : (
                 <div className="bg-white p-6 rounded-lg shadow-lg mt-6">
                     <h2 className="text-lg font-semibold mb-4">Daftar Data untuk Validasi</h2>
                     {data.length === 0 ? (
-                        <p className="text-gray-600">Tidak ada data untuk divalidasi.</p>
+                        <p className="text-green-600">Tidak ada data untuk divalidasi.</p>
                     ) : (
                         <table className="table-auto w-full bg-white rounded-lg shadow">
-                            <thead className="bg-blue-800 text-white">
+                            <thead className="bg-green-800 text-white">
                                 <tr>
                                     <th className="px-4 py-2">Nama</th>
                                     <th className="px-4 py-2">NIK</th>
@@ -70,11 +70,11 @@ const ValidasiData = () => {
                                     <th className="px-4 py-2">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody className="text-gray-700">
+                            <tbody className="text-green-700">
                                 {data.map((item, index) => (
                                     <tr
                                         key={item.nik}
-                                        className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
+                                        className={index % 2 === 0 ? 'bg-green-50' : 'bg-white'}
                                     >
                                         <td className="px-4 py-2">{item.nama}</td>
                                         <td className="px-4 py-2">{item.nik}</td>

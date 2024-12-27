@@ -1,10 +1,5 @@
 import React from "react";
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Navigate,
-} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route,Navigate,} from "react-router-dom";
 import ValidasiData from "../components/admin/validasidata";
 import PendaftaranManual from "../components/admin/pendaftaran";
 import ManajemenData from "../components/admin/manajemen";

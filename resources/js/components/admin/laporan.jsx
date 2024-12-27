@@ -32,19 +32,19 @@ const LaporanData = () => {
 
     return (
         <div className="flex-1 p-4">
-            <h1 className="text-2xl font-bold text-center text-gray-800">Laporan Data Penduduk</h1>
+            <h1 className="text-2xl font-bold text-center text-green-800">Laporan Data Penduduk</h1>
 
             {!showLaporan ? (
                 <div className="bg-white p-6 rounded-lg shadow-lg mt-6">
                     <h2 className="text-lg font-semibold mb-4">Filter Laporan</h2>
                     <form className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">Kategori Penduduk</label>
+                            <label className="block text-sm font-medium text-green-700">Kategori Penduduk</label>
                             <select
                                 id="kategori"
                                 value={filter.kategori}
                                 onChange={handleFilterChange}
-                                className="mt-1 block w-full rounded border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                className="mt-1 block w-full rounded border-green-300 shadow-sm focus:ring-green-500 focus:border-green-500"
                             >
                                 <option value="">Semua Kategori</option>
                                 <option value="Krama Desa Adat">Krama Desa Adat</option>
@@ -54,31 +54,31 @@ const LaporanData = () => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">Dari Tanggal</label>
+                            <label className="block text-sm font-medium text-green-700">Dari Tanggal</label>
                             <input
                                 type="date"
                                 id="dariTanggal"
                                 value={filter.dariTanggal}
                                 onChange={handleFilterChange}
-                                className="mt-1 block w-full rounded border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                className="mt-1 block w-full rounded border-green-300 shadow-sm focus:ring-green-500 focus:border-green-500"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">Sampai Tanggal</label>
+                            <label className="block text-sm font-medium text-green-700">Sampai Tanggal</label>
                             <input
                                 type="date"
                                 id="sampaiTanggal"
                                 value={filter.sampaiTanggal}
                                 onChange={handleFilterChange}
-                                className="mt-1 block w-full rounded border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                className="mt-1 block w-full rounded border-green-300 shadow-sm focus:ring-green-500 focus:border-green-500"
                             />
                         </div>
 
                         <div className="md:col-span-3 text-right">
                             <button
                                 type="button"
-                                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+                                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
                                 onClick={generateReport}
                             >
                                 Tampilkan Laporan
@@ -90,7 +90,7 @@ const LaporanData = () => {
                 <div className="bg-white p-6 rounded-lg shadow-lg mt-6">
                     <div className="text-right mb-4">
                         <button
-                            className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+                            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
                             onClick={() => setShowLaporan(false)}
                         >
                             Kembali
@@ -99,18 +99,18 @@ const LaporanData = () => {
 
                     <h2 className="text-lg font-semibold mb-4">Hasil Laporan</h2>
                     <table className="table-auto w-full bg-white rounded-lg shadow">
-                        <thead className="bg-gray-800 text-white">
+                        <thead className="bg-green-800 text-white">
                             <tr>
-                                <th className="px-4 py-2">Nama</th>
-                                <th className="px-4 py-2">NIK</th>
-                                <th className="px-4 py-2">Alamat</th>
-                                <th className="px-4 py-2">Kategori</th>
-                                <th className="px-4 py-2">Tanggal Pendaftaran</th>
+                                <th className="px-4 py-2 text-center">Nama</th>
+                                <th className="px-4 py-2 text-center">NIK</th>
+                                <th className="px-4 py-2 text-center">Alamat</th>
+                                <th className="px-4 py-2 text-center">Kategori</th>
+                                <th className="px-4 py-2 text-center">Tanggal Pendaftaran</th>
                             </tr>
                         </thead>
-                        <tbody className="text-gray-700">
+                        <tbody className="text-green-700">
                             {laporan.map((item, index) => (
-                                <tr key={index} className="border-t">
+                                <tr key={index} className="border-t text-center">
                                     <td className="px-4 py-2">{item.nama}</td>
                                     <td className="px-4 py-2">{item.nik}</td>
                                     <td className="px-4 py-2">{item.alamat}</td>
