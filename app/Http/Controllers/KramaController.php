@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biodata;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class KramaController extends Controller
 {
@@ -11,7 +13,13 @@ class KramaController extends Controller
      */
     public function index()
     {
-        //
+        // Mengambil data penduduk dengan pagination, misal 10 data per halaman
+        $penduduk = Biodata::paginate(10);
+
+        // Kirim data penduduk ke komponen DataPenduduk menggunakan Inertia
+        return Inertia::render('DataPenduduk', [
+            'penduduk' => $penduduk, // Kirim data penduduk dengan pagination
+        ]);
     }
 
     /**
@@ -21,6 +29,8 @@ class KramaController extends Controller
     {
         //
     }
+
+    
 
     /**
      * Store a newly created resource in storage.

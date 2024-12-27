@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KramaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -9,9 +10,7 @@ Route::get('/', function () {
 Route::get('/notifikasi', function () {
     return inertia('Notifikasi');
 });
-Route::get('/data-penduduk', function () {
-    return inertia('DataPenduduk');
-});
+Route::get('/data-penduduk', [KramaController::class, 'index']);
 Route::get('/daftar-penduduk', function () {
     return inertia('DaftarPenduduk');
 });
