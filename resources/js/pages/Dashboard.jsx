@@ -7,26 +7,26 @@ import LaporanData from '../components/admin/laporan';
 import Sidebar from '../components/admin/sidebar';
 
 const Dashboard = () => {
-  return (
-    <Router>
-      <div className="flex">
-        {/* Sidebar ditampilkan di sebelah kiri */}
-        <Sidebar />
+    return (
+        <Router>
+            <div className="flex">
+                {/* Sidebar */}
+                <Sidebar />
 
-        {/* Konten halaman ditampilkan di sebelah kanan */}
-        <div className="flex-grow p-4">
-          <Routes>
-            {/* Redirect ke /validasi jika pengguna mengakses / */}
-            <Route path="/admin" element={<ValidasiData />} />
-            <Route path="/validasi" element={<ValidasiData />} />
-            <Route path="/pendaftaran" element={<PendaftaranManual />} />
-            <Route path="/manajemen" element={<ManajemenData />} />
-            <Route path="/laporan" element={<LaporanData />} />
-          </Routes>
-        </div>
-      </div>
-    </Router>
-  );
+                {/* Konten Halaman */}
+                <div className="flex-grow p-4">
+                    <Routes>
+                        <Route path="/admin" element={<ValidasiData />} />
+                        <Route path="/validasi" element={<ValidasiData />} />
+                        <Route path="/pendaftaran" element={<PendaftaranManual />} />
+                        <Route path="/manajemen" element={<ManajemenData />} />
+                        <Route path="/laporan" element={<LaporanData />} />
+                        <Route path="/" element={<Navigate to="/admin" />} />
+                    </Routes>
+                </div>
+            </div>
+        </Router>
+    );
 };
 
 export default Dashboard;
