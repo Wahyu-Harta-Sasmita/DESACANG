@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../components/user/navbar'
-import Beranda from '../components/user/Beranda'
 import Footer from '../components/user/Footer'
+import AddForm from '../components/user/AddForm'
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Beranda />
+      <AddForm />
       <Footer />
     </>
   )

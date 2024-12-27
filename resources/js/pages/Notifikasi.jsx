@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../components/user/navbar'
-import Beranda from '../components/user/Beranda'
 import Footer from '../components/user/Footer'
+import Notifikasi from '../components/user/Notifikasi'
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Beranda />
+      <Notifikasi />
       <Footer />
     </>
   )
