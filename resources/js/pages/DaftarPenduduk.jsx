@@ -3,7 +3,7 @@ import Navbar from '../components/user/navbar'
 import Footer from '../components/user/Footer'
 import AddForm from '../components/user/AddForm'
 
-const Home = () => {
+const DaftarPenduduk = () => {
   return (
     <>
       <Navbar />
@@ -13,4 +13,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default DaftarPenduduk

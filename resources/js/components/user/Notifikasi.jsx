@@ -8,7 +8,7 @@ const Notifikasi = () => {
   ];
 
   return (
-    <div className="p-6 font-sans w-[75vh]">
+    <div className="p-6 font-sans h-[75vh]">
       <h2 className="text-2xl font-semibold mb-4">Notifikasi</h2>
       <div className="space-y-4">
         {notifications.map((notif) => (

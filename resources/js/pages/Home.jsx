@@ -1,16 +1,16 @@
-import React from 'react'
-import Navbar from '../components/user/navbar'
-import Beranda from '../components/user/Beranda'
-import Footer from '../components/user/Footer'
+import React from 'react';
+import Navbar from '../components/user/navbar';
+import Footer from '../components/user/Footer';
+import Beranda from '../components/user/Beranda';
 
 const Home = () => {
   return (
-    <>
+    <div>
       <Navbar />
       <Beranda />
       <Footer />
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default Home
+export default Home;

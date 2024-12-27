@@ -25,7 +25,7 @@ const ValidasiData = () => {
         try {
             await axios.post(`/api/validasi/${nik}/approve`);
             alert(`Data dengan NIK ${nik} berhasil divalidasi.`);
-            fetchData(); // Refresh data after validation
+            fetchData(); // Refresh data setelah validasi
         } catch (error) {
             console.error('Error validating data:', error);
             alert('Terjadi kesalahan saat memvalidasi data.');
@@ -38,7 +38,7 @@ const ValidasiData = () => {
             try {
                 await axios.post(`/api/validasi/${nik}/reject`, { alasan });
                 alert(`Data dengan NIK ${nik} ditolak dengan alasan: ${alasan}`);
-                fetchData(); // Refresh data after rejection
+                fetchData(); // Refresh data setelah penolakan
             } catch (error) {
                 console.error('Error rejecting data:', error);
                 alert('Terjadi kesalahan saat menolak data.');
@@ -48,7 +48,7 @@ const ValidasiData = () => {
 
     return (
         <div className="flex-1 p-4">
-            <h1 className="text-2xl font-bold text-center text-gray-800">Validasi Data</h1>
+            <h1 className="text-2xl font-bold text-center text-blue-800">Validasi Data</h1>
 
             {loading ? (
                 <div className="text-center mt-6">
@@ -61,7 +61,7 @@ const ValidasiData = () => {
                         <p className="text-gray-600">Tidak ada data untuk divalidasi.</p>
                     ) : (
                         <table className="table-auto w-full bg-white rounded-lg shadow">
-                            <thead className="bg-gray-800 text-white">
+                            <thead className="bg-blue-800 text-white">
                                 <tr>
                                     <th className="px-4 py-2">Nama</th>
                                     <th className="px-4 py-2">NIK</th>
@@ -71,8 +71,11 @@ const ValidasiData = () => {
                                 </tr>
                             </thead>
                             <tbody className="text-gray-700">
-                                {data.map((item) => (
-                                    <tr key={item.nik} className="border-t">
+                                {data.map((item, index) => (
+                                    <tr
+                                        key={item.nik}
+                                        className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
+                                    >
                                         <td className="px-4 py-2">{item.nama}</td>
                                         <td className="px-4 py-2">{item.nik}</td>
                                         <td className="px-4 py-2">{item.alamat}</td>

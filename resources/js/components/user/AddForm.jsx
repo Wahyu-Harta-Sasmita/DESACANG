@@ -1,15 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddForm = () => {
+    // State untuk formData
+    const [formData, setFormData] = useState({
+        nama: "",
+        nik: "",
+        tanggalLahir: "",
+        alamat: "",
+        kategori: "",
+        telepon: "",
+        email: "",
+    });
+
+    // Fungsi untuk menangani perubahan input form
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [id]: value,
+        }));
+    };
+
+    // Fungsi untuk menangani submit form
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Log data form saat disubmit (dapat diganti dengan aksi yang sesuai)
+        console.log(formData);
+    };
+
     return (
-        <div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+        <div className="h-[75vh] bg-white">
+            <div className="p-6">
                 <h1 className="text-2xl font-bold text-gray-800">
-                    Pendaftaran Manual Penduduk
-                </h1>
-                <h2 className="text-lg font-semibold mb-4 mt-6">
                     Formulir Pendaftaran
-                </h2>
+                </h1>
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div>
@@ -72,7 +96,7 @@ const AddForm = () => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="text-2xl font-bold text-gray-800">
                                 Kategori Penduduk
                             </label>
                             <select
@@ -120,7 +144,7 @@ const AddForm = () => {
                         </div>
                     </div>
 
-                    <div className="mt-6 text-right">
+                    <div className="text-right mt-6">
                         <button
                             type="submit"
                             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
